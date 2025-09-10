@@ -1,4 +1,4 @@
-
+#Importing libraries
 
 import numpy as np
 import pandas as pd
@@ -8,13 +8,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
-# 🎨 Use a modern Seaborn style
+# Using a Seaborn style colour theme
 sns.set(style="whitegrid", palette="pastel")
 
-# Load the data from the CSV file
+# Loading the data from the CSV file
 data = pd.read_csv("home_dataset.csv")
 
-# Extract the features and target variables
+# Extracting the features and target variables
 house_sizes = data["HouseSize"].values
 house_prices = data["HousePrice"].values
 
@@ -43,7 +43,7 @@ model.fit(x_train, y_train)
 # Predicting prices for the test set
 predictions = model.predict(x_test)
 
-# Calculate R² score
+# Calculating the R² score
 r2 = r2_score(y_test, predictions)
 
 # Visualising the predictions data
@@ -56,7 +56,7 @@ plt.ylabel("House Price (millions (£))", fontsize=12)
 plt.legend(fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.4)
 
-# Annotate R² score on plot
+# Annotating the R² score on plot
 plt.text(0.05, 0.95,
          f"R² = {r2:.3f}",
          transform=plt.gca().transAxes,
